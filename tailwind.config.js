@@ -1,0 +1,22 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#3b82f6",
+        secondary: "#10b981",
+        accent: "#8b5cf6",
+        dark: "#1f2937",
+        darker: "#111827",
+      },
+      animation: {
+        'bounce-slow': 'bounce 3s infinite',
+      }
+    },
+  },
+  plugins: [],
+}
