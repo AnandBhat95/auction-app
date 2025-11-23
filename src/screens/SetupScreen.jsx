@@ -190,11 +190,29 @@ const SetupScreen = () => {
                             </div>
                         </div>
 
+                        {/* Image Field */}
+                        <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-700">
+                            <h3 className="font-medium text-yellow-400 mb-3">3. Image Source (Optional)</h3>
+                            <div className="grid grid-cols-1">
+                                <div>
+                                    <label className="block text-xs text-slate-400 mb-1">Map to Column (contains Image URLs)</label>
+                                    <select
+                                        className="w-full bg-slate-800 border border-slate-600 rounded p-2 text-sm"
+                                        value={fieldConfig.image.key}
+                                        onChange={(e) => setFieldConfig({ ...fieldConfig, image: { ...fieldConfig.image, key: e.target.value } })}
+                                    >
+                                        <option value="">None (Use Default Icon)</option>
+                                        {headers.map(h => <option key={h} value={h}>{h}</option>)}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         {/* Additional Details */}
                         <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-700">
-                            <h3 className="font-medium text-purple-400 mb-3">3. Additional Details to Display</h3>
+                            <h3 className="font-medium text-purple-400 mb-3">4. Additional Details to Display</h3>
                             <div className="grid grid-cols-2 gap-2 max-h-40 overflow-y-auto">
-                                {headers.filter(h => h !== fieldConfig.name.key && h !== fieldConfig.price.key).map(h => (
+                                {headers.filter(h => h !== fieldConfig.name.key && h !== fieldConfig.price.key && h !== fieldConfig.image.key).map(h => (
                                     <label key={h} className="flex items-center gap-2 text-sm p-2 hover:bg-slate-800 rounded cursor-pointer">
                                         <input
                                             type="checkbox"
