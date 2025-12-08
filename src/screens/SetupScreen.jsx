@@ -10,7 +10,7 @@ const SetupScreen = () => {
 
     // Dynamic Field Config
     const [fieldConfig, setFieldConfig] = useState({
-        name: { label: 'Item Name', key: '' },
+        name: { label: 'Player Name', key: '' },
         price: { label: 'Base Price', key: '' },
         image: { key: '' },
         details: [] // Array of column names to include

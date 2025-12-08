@@ -174,7 +174,15 @@ const AuctionFloor = () => {
                             </button>
                             <div className="text-center min-w-[120px]">
                                 <p className="text-xs text-slate-400 uppercase mb-1">Bid Increment</p>
-                                <p className="text-2xl font-bold">₹ {bidIncrement}</p>
+                                <div className="flex items-center justify-center">
+                                    <span className="text-2xl font-bold text-slate-500 mr-1">₹</span>
+                                    <input
+                                        type="number"
+                                        value={bidIncrement}
+                                        onChange={(e) => setBidIncrement(Math.max(0, parseInt(e.target.value) || 0))}
+                                        className="text-2xl font-bold bg-transparent text-left w-24 focus:outline-none border-b border-transparent focus:border-blue-500 transition-colors appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                    />
+                                </div>
                             </div>
                             <button
                                 onClick={() => setBidIncrement(prev => prev + 50)}
